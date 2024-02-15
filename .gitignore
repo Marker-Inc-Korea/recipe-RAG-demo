@@ -167,3 +167,6 @@ data/**/*.csv
 data/**/*.parquet
 data/*.csv
 data/*.parquet
+
+!data/qa_train.parquet
+!data/qa_val.parquet
