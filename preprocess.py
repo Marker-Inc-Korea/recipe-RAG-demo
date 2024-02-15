@@ -25,6 +25,7 @@ def preprocess():
         lambda x: {'last_modified_datetime': datetime.strptime(x, '%Y-%m-%d')})
     result_df = result_df[['id', 'contents', 'metadata']]
     result_df = result_df.rename(columns={'id': 'doc_id'})
+    result_df['doc_id'] = result_df['doc_id'].apply(lambda x: str(x))
     result_df.sample(1000, random_state=42).to_parquet(os.path.join(data_dir, 'corpus.parquet'), index=False)
 
 
