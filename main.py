@@ -19,7 +19,8 @@ data_path = os.path.join(root_path, 'data')
 def main(config, qa_data_path, corpus_data_path, project_dir):
     load_dotenv()
     generator_models['vllm'] = Vllm
-    embedding_models['sfr-embedding-mistral'] = HuggingFaceEmbedding(model_name="Salesforce/SFR-Embedding-Mistral")
+    embedding_models['multilingual-e5-large'] = HuggingFaceEmbedding(
+        model_name="intfloat/multilingual-e5-large-instruct")
     if not os.path.exists(project_dir):
         os.makedirs(project_dir)
     evaluator = Evaluator(qa_data_path, corpus_data_path, project_dir=project_dir)
