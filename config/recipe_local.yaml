@@ -24,7 +24,12 @@ node_lines:
     nodes:
       - node_type: prompt_maker
         strategy:
-          metrics: [ bleu, meteor, rouge, sem_score ]
+          metrics:
+            - metric_name: bleu
+            - metric_name: meteor
+            - metric_name: rouge
+            - metric_name: sem_score
+              embedding_model: openai
           generator_modules:
             - module_type: llama_index_llm
               llm: vllm
