@@ -1,8 +1,10 @@
 import os
 
 import click
+from autorag import generator_models
 from autorag.evaluator import Evaluator
 from dotenv import load_dotenv
+from llama_index.llms.vllm import Vllm
 
 root_path = os.path.dirname(os.path.realpath(__file__))
 data_path = os.path.join(root_path, 'data')
@@ -15,6 +17,7 @@ data_path = os.path.join(root_path, 'data')
 @click.option('--project_dir', type=click.Path(exists=False), default=os.path.join(root_path, 'benchmark'))
 def main(config, qa_data_path, corpus_data_path, project_dir):
     load_dotenv()
+    generator_models['vllm'] = Vllm
     if not os.path.exists(project_dir):
         os.makedirs(project_dir)
     evaluator = Evaluator(qa_data_path, corpus_data_path, project_dir=project_dir)
