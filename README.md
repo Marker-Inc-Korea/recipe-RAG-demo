@@ -1,5 +1,11 @@
-# AutoRAG-template
-Template for a new AutoRAG project
+# recipe-RAG-demo
+You are the developer of a recipe app.
+Your boss wants to create a new chatbot based on the recipe data.
+Ultimately, the chatbot can replace search engine in your app. 
+
+Now, you have to make the proof of concept for the chatbot in a few days. 
+The only change to make it fast, yet powerful, is using [AutoRAG](https://github.com/Marker-Inc-Korea/AutoRAG).
+This is the journey to make the chatbot with the recipe.
 
 
 # Installation
