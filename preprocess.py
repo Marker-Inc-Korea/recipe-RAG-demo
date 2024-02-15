@@ -1,5 +1,5 @@
-import os
 import ast
+import os
 from datetime import datetime
 
 import pandas as pd
@@ -24,7 +24,7 @@ def preprocess():
     result_df['metadata'] = result_df['submitted'].apply(
         lambda x: {'last_modified_datetime': datetime.strptime(x, '%Y-%m-%d')})
     result_df = result_df[['id', 'contents', 'metadata']]
-    result_df.rename(columns={'id': 'doc_id'})
+    result_df = result_df.rename(columns={'id': 'doc_id'})
     result_df.sample(1000, random_state=42).to_parquet(os.path.join(data_dir, 'corpus.parquet'), index=False)
 
 
