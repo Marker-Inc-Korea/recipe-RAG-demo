@@ -1,9 +1,10 @@
 import os
 
 import click
-from autorag import generator_models
+from autorag import generator_models, embedding_models
 from autorag.evaluator import Evaluator
 from dotenv import load_dotenv
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.vllm import Vllm
 
 root_path = os.path.dirname(os.path.realpath(__file__))
@@ -18,6 +19,7 @@ data_path = os.path.join(root_path, 'data')
 def main(config, qa_data_path, corpus_data_path, project_dir):
     load_dotenv()
     generator_models['vllm'] = Vllm
+    embedding_models['sfr-embedding-mistral'] = HuggingFaceEmbedding(model_name="Salesforce/SFR-Embedding-Mistral")
     if not os.path.exists(project_dir):
         os.makedirs(project_dir)
     evaluator = Evaluator(qa_data_path, corpus_data_path, project_dir=project_dir)
