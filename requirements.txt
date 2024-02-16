@@ -1,4 +1,4 @@
-AutoRAG>=0.0.7
+AutoRAG>=0.0.8
 click
 python-dotenv
 llama-index-llms-vllm
