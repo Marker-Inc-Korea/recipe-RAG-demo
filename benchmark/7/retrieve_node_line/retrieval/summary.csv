@@ -1,0 +1,10 @@
+filename,module_name,module_params,execution_time,retrieval_recall,is_best
+0.parquet,bm25,{'top_k': 3},0.007175319989522298,0.94,False
+1.parquet,vectordb,"{'top_k': 3, 'embedding_model': 'huggingface_baai_bge_small'}",0.01118046800295512,0.9933333333333333,True
+2.parquet,vectordb,"{'top_k': 3, 'embedding_model': 'huggingface_cointegrated_rubert_tiny2'}",0.006139668226242065,0.09666666666666666,False
+3.parquet,hybrid_rrf,"{'top_k': 3, 'rrf_k': 10, 'target_modules': ('bm25', 'vectordb'), 'target_module_params': ({'top_k': 3}, {'top_k': 3, 'embedding_model': 'huggingface_baai_bge_small'})}",0.0183557879924773,0.9433333333333334,False
+4.parquet,hybrid_rrf,"{'top_k': 3, 'rrf_k': 3, 'target_modules': ('bm25', 'vectordb'), 'target_module_params': ({'top_k': 3}, {'top_k': 3, 'embedding_model': 'huggingface_baai_bge_small'})}",0.0183557879924773,0.9433333333333334,False
+5.parquet,hybrid_rrf,"{'top_k': 3, 'rrf_k': 5, 'target_modules': ('bm25', 'vectordb'), 'target_module_params': ({'top_k': 3}, {'top_k': 3, 'embedding_model': 'huggingface_baai_bge_small'})}",0.0183557879924773,0.9433333333333334,False
+6.parquet,hybrid_cc,"{'top_k': 3, 'weights': (0.5, 0.5), 'target_modules': ('bm25', 'vectordb'), 'target_module_params': ({'top_k': 3}, {'top_k': 3, 'embedding_model': 'huggingface_baai_bge_small'})}",0.0183557879924773,0.8933333333333333,False
+7.parquet,hybrid_cc,"{'top_k': 3, 'weights': (0.7, 0.3), 'target_modules': ('bm25', 'vectordb'), 'target_module_params': ({'top_k': 3}, {'top_k': 3, 'embedding_model': 'huggingface_baai_bge_small'})}",0.0183557879924773,0.905,False
+8.parquet,hybrid_cc,"{'top_k': 3, 'weights': (0.3, 0.7), 'target_modules': ('bm25', 'vectordb'), 'target_module_params': ({'top_k': 3}, {'top_k': 3, 'embedding_model': 'huggingface_baai_bge_small'})}",0.0183557879924773,0.8833333333333333,False

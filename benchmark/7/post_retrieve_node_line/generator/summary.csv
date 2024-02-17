@@ -1,0 +1,4 @@
+filename,module_name,module_params,execution_time,bleu,meteor,rouge,sem_score,is_best
+0.parquet,llama_index_llm,"{'llm': 'vllm', 'model': 'mistralai/Mistral-7B-Instruct-v0.2', 'temperature': 0.1, 'batch': 8}",1.604506557782491,57.01487282372942,0.6947538031316837,0.7024666083249209,0.9714026025998513,True
+1.parquet,llama_index_llm,"{'llm': 'vllm', 'model': 'mistralai/Mistral-7B-Instruct-v0.2', 'temperature': 0.6, 'batch': 8}",1.4525959734121958,55.05004592095633,0.6799687933888344,0.6875635926477266,0.9698690723692668,False
+2.parquet,llama_index_llm,"{'llm': 'vllm', 'model': 'mistralai/Mistral-7B-Instruct-v0.2', 'temperature': 1.2, 'batch': 8}",1.3753496833642325,47.37807331059288,0.657063606266283,0.6362754557700631,0.965583111839136,False
